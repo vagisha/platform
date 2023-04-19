@@ -68,7 +68,7 @@ public class ModulePropertiesWriterFactory implements FolderWriterFactory
                         ModuleProperty property = entry.getValue();
                         if(property.isCanSetPerContainer()) // Save only properties settable on containers
                         {
-                            String value = property.getValueContainerSpecific(c);
+                            String value = property.isCanBeInherited() ? property.getEffectiveValue(c) : property.getValueContainerSpecific(c);
 
                             if(!StringUtils.isBlank(value))
                             {

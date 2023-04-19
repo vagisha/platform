@@ -54,6 +54,7 @@ public class ModuleProperty
 
     private String _label;
     private boolean _canSetPerContainer = false;
+    private boolean _canBeInherited = false;
     private boolean _excludeFromClientContext = false;
     private String _defaultValue = null;
     private String _description = null;
@@ -144,6 +145,16 @@ public class ModuleProperty
     public void setCanSetPerContainer(boolean canSetPerContainer)
     {
         _canSetPerContainer = canSetPerContainer;
+    }
+
+    public boolean isCanBeInherited()
+    {
+        return _canBeInherited;
+    }
+
+    public void setCanBeInherited(boolean canBeInherited)
+    {
+        _canBeInherited = canBeInherited;
     }
 
     public String getDefaultValue()
